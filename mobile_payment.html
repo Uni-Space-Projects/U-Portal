@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banca 360 - Pago Móvil</title>
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/layout.css">
+    <link rel="stylesheet" href="./css/components.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="dashboard.html" class="logo">Banca 360</a>
+    <div class="nav-actions">
+        <a href="dashboard.html">Volver</a>
+        <button id="themeToggle" class="btn-icon">🌙</button>
+    </div>
+</nav>
+
+<div class="main-container">
+    <div class="card">
+        <h2 style="margin-bottom: 20px;">Pago Móvil</h2>
+        
+        <form class="operation-form" id="mobilePaymentForm">
+            <div class="form-group">
+                <label>Banco Destino</label>
+                <select class="input-control" required>
+                    <option value="">Seleccione un banco</option>
+                    <option value="0102">0102 - Banco de Venezuela</option>
+                    <option value="0105">0105 - Banco Mercantil</option>
+                    <option value="0108">0108 - Banco Provincial</option>
+                    <option value="0134">0134 - Banesco</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Cédula o RIF</label>
+                <div style="display: flex; gap: 10px;">
+                    <select class="input-control" style="width: 80px;" required>
+                        <option value="V">V</option>
+                        <option value="E">E</option>
+                        <option value="J">J</option>
+                    </select>
+                    <input type="text" class="input-control" placeholder="12345678" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Número de Teléfono</label>
+                <input type="tel" class="input-control" placeholder="Ej: 0414 1234567" required>
+            </div>
+            <div class="form-group">
+                <label>Monto (Bs.)</label>
+                <input type="number" class="input-control" placeholder="0.00" min="1" step="0.01" required>
+            </div>
+            
+            <button type="submit" class="btn">Realizar Pago</button>
+        </form>
+    </div>
+</div>
+
+<script src="./js/theme.js"></script>
+<script src="./js/operations.js"></script>
+
+</body>
+</html>

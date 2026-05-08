@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banca 360 - Iniciar Sesión</title>
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/components.css">
+    <link rel="stylesheet" href="./css/auth.css">
+</head>
+<body>
+
+<button id="themeToggle" class="btn-icon theme-toggle-auth" title="Cambiar tema">🌙</button>
+
+<div class="auth-wrapper">
+    <div class="auth-container">
+        
+        <!-- LOGIN VIEW -->
+        <div id="loginView">
+            <div class="auth-card">
+                <h1>Banca 360</h1>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <input type="text" id="loginUser" class="input-control" placeholder="Usuario" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="loginPass" class="input-control" placeholder="Contraseña" required>
+                    </div>
+                    <button type="submit" class="btn btn-auth" id="btnLogin">
+                        <span id="loginText">Iniciar sesión</span>
+                        <div id="loginSpinner" class="spinner"></div>
+                    </button>
+                    <div id="loginError" class="error-text" style="margin-top: 15px;">Usuario o contraseña incorrectos.</div>
+                </form>
+            </div>
+            <div class="auth-switch">
+                ¿No tienes cuenta? <a href="#" id="showRegister">Regístrate</a>
+            </div>
+        </div>
+
+        <!-- REGISTER VIEW -->
+        <div id="registerView" class="hidden">
+            <div class="auth-card">
+                <h1>Banca 360</h1>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 15px;">Crea tu cuenta para gestionar tu dinero.</p>
+                <form id="registerForm">
+                    <div class="form-group">
+                        <input type="text" id="regUser" class="input-control" placeholder="Usuario" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="regPass" class="input-control" placeholder="Contraseña (mínimo 6 números)" required>
+                        <div id="passError" class="error-text">La contraseña debe tener al menos 6 caracteres numéricos.</div>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="regPassConfirm" class="input-control" placeholder="Confirmar contraseña" required>
+                        <div id="confirmError" class="error-text">Las contraseñas no coinciden.</div>
+                    </div>
+                    <button type="submit" class="btn btn-auth">Registrarte</button>
+                </form>
+            </div>
+            <div class="auth-switch">
+                ¿Tienes una cuenta? <a href="#" id="showLogin">Entrar</a>
+            </div>
+        </div>
+
+        <!-- SECURITY QUESTIONS VIEW -->
+        <div id="securityView" class="hidden">
+            <div class="auth-card security-questions-container">
+                <h1>Seguridad</h1>
+                <h3>Configura tus preguntas de seguridad</h3>
+                <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 20px;">Es un requisito obligatorio para finalizar tu registro.</p>
+                <form id="securityForm">
+                    <div class="form-group">
+                        <label>¿Cuál es el nombre de tu primera mascota?</label>
+                        <input type="text" id="secQ1" class="input-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>¿En qué ciudad naciste?</label>
+                        <input type="text" id="secQ2" class="input-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-auth">Finalizar Registro</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script src="./js/theme.js"></script>
+<script src="./js/auth.js"></script>
+
+</body>
+</html>

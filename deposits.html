@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banca 360 - Depósitos</title>
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/layout.css">
+    <link rel="stylesheet" href="./css/components.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="dashboard.html" class="logo">Banca 360</a>
+    <div class="nav-actions">
+        <a href="dashboard.html">Volver</a>
+        <button id="themeToggle" class="btn-icon">🌙</button>
+    </div>
+</nav>
+
+<div class="main-container">
+    <div class="card">
+        <h2 style="margin-bottom: 20px;">Depositar a tu Cuenta</h2>
+        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">
+            Simula un depósito ingresando los datos correspondientes.
+        </p>
+
+        <form class="operation-form" id="depositForm">
+            <div class="form-group">
+                <label>Método de Depósito</label>
+                <select class="input-control" required>
+                    <option value="efectivo">Depósito en Efectivo (Taquilla)</option>
+                    <option value="cheque">Depósito en Cheque</option>
+                    <option value="transferencia">Transferencia de Otro Banco</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Número de Referencia</label>
+                <input type="text" class="input-control" placeholder="1234567890" required>
+            </div>
+            <div class="form-group">
+                <label>Monto a Depositar (Bs.)</label>
+                <input type="number" class="input-control" placeholder="0.00" min="1" step="0.01" required>
+            </div>
+            
+            <button type="submit" class="btn" style="background-color: var(--success-color);">
+                Acreditar Depósito
+            </button>
+        </form>
+    </div>
+</div>
+
+<script src="./js/theme.js"></script>
+<script src="./js/operations.js"></script>
+
+</body>
+</html>

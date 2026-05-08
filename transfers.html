@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banca 360 - Transferencias</title>
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/layout.css">
+    <link rel="stylesheet" href="./css/components.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="dashboard.html" class="logo">Banca 360</a>
+    <div class="nav-actions">
+        <a href="dashboard.html">Volver</a>
+        <button id="themeToggle" class="btn-icon">🌙</button>
+    </div>
+</nav>
+
+<div class="main-container">
+    <div class="card">
+        <h2 style="margin-bottom: 20px;">Transferencia Bancaria</h2>
+        
+        <form class="operation-form" id="transferForm">
+            <div class="form-group">
+                <label>Cuenta Destino</label>
+                <input type="text" class="input-control" placeholder="Ej: 0102 xxxx xxxx xxxx" required>
+            </div>
+            <div class="form-group">
+                <label>Nombre del Beneficiario</label>
+                <input type="text" class="input-control" placeholder="Nombre completo" required>
+            </div>
+            <div class="form-group">
+                <label>Monto (Bs.)</label>
+                <input type="number" class="input-control" placeholder="0.00" min="1" step="0.01" required>
+            </div>
+            <div class="form-group">
+                <label>Concepto</label>
+                <input type="text" class="input-control" placeholder="Ej: Pago de alquiler">
+            </div>
+            
+            <button type="submit" class="btn">Confirmar Transferencia</button>
+        </form>
+    </div>
+</div>
+
+<script src="./js/theme.js"></script>
+<script src="./js/operations.js"></script>
+
+</body>
+</html>

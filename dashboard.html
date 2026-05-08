@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banca 360 - Dashboard</title>
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/layout.css">
+    <link rel="stylesheet" href="./css/components.css">
+    <link rel="stylesheet" href="./css/dashboard.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="dashboard.html" class="logo">Banca 360</a>
+    <div class="nav-actions">
+        <a href="profile.html">Perfil</a>
+        <button id="themeToggle" class="btn-icon" title="Cambiar tema">🌙</button>
+        <a href="logout.html" style="color: var(--error-color);">Salir</a>
+    </div>
+</nav>
+
+<div class="main-container">
+    
+    <!-- SALDO -->
+    <div class="saldo-card">
+        <h3>Saldo disponible</h3>
+        <div class="saldo-box">
+            <span id="saldoAmount" class="saldo-amount">Bs. *****</span>
+            <button id="toggleSaldo" class="btn-toggle-saldo">👁️</button>
+        </div>
+    </div>
+
+    <!-- ACCIONES RÁPIDAS -->
+    <div class="card">
+        <h3 class="section-title">Operaciones</h3>
+        <div class="quick-actions">
+            <a href="transfers.html" class="btn">Transferir</a>
+            <a href="mobile_payment.html" class="btn">Pago Móvil</a>
+            <a href="deposits.html" class="btn btn-secondary">Depositar</a>
+        </div>
+    </div>
+
+    <!-- ÚLTIMAS TRANSACCIONES -->
+    <div class="card">
+        <h3 class="section-title">
+            Últimos movimientos
+            <a href="history.html" style="font-size: 0.85rem; font-weight: normal;">Ver todos</a>
+        </h3>
+
+        <!-- Botones de filtro del dashboard -->
+        <div style="display: flex; gap: 10px; margin-bottom: 15px;">
+            <button class="btn btn-secondary" id="btnFilterAll" style="padding: 5px 10px; font-size: 0.8rem;">Todas</button>
+            <button class="btn btn-secondary" id="btnFilterIn" style="padding: 5px 10px; font-size: 0.8rem;">Entradas</button>
+            <button class="btn btn-secondary" id="btnFilterOut" style="padding: 5px 10px; font-size: 0.8rem;">Salidas</button>
+        </div>
+
+        <ul class="transaction-list" id="recentTransactions">
+            <!-- Renderizado desde JS -->
+        </ul>
+    </div>
+
+</div>
+
+<script src="./js/theme.js"></script>
+<script src="./js/dashboard.js"></script>
+
+</body>
+</html>

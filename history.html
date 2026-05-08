@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banca 360 - Historial de Transacciones</title>
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/layout.css">
+    <link rel="stylesheet" href="./css/components.css">
+    <link rel="stylesheet" href="./css/dashboard.css"> <!-- Reusamos estilos de transacciones -->
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="dashboard.html" class="logo">Banca 360</a>
+    <div class="nav-actions">
+        <a href="dashboard.html">Volver</a>
+        <button id="themeToggle" class="btn-icon">🌙</button>
+    </div>
+</nav>
+
+<div class="main-container">
+    <div class="card">
+        <h2 style="margin-bottom: 20px;">Historial Completo</h2>
+
+        <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+            <button class="btn btn-secondary" id="histFilterAll" style="flex: 1;">Todas</button>
+            <button class="btn btn-secondary" id="histFilterIn" style="flex: 1;">Solo Entradas</button>
+            <button class="btn btn-secondary" id="histFilterOut" style="flex: 1;">Solo Salidas</button>
+        </div>
+
+        <ul class="transaction-list" id="historyList">
+            <!-- Renderizado dinámico -->
+        </ul>
+    </div>
+</div>
+
+<!-- Modal / Vista de Detalle Oculta -->
+<div id="transactionDetail" class="hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); display: flex; justify-content: center; align-items: center; z-index: 1000;">
+    <div class="card" style="width: 90%; max-width: 400px; margin: 0; position: relative;">
+        <button id="closeDetail" style="position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 1.2rem; cursor: pointer; color: var(--text-color);">✖</button>
+        <h3 style="margin-bottom: 15px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">Detalle de Transacción</h3>
+        
+        <div style="margin-bottom: 10px;">
+            <span style="color: var(--text-muted); font-size: 0.85rem;">Referencia</span>
+            <div id="detRef" style="font-weight: 600;"></div>
+        </div>
+        <div style="margin-bottom: 10px;">
+            <span style="color: var(--text-muted); font-size: 0.85rem;">Fecha</span>
+            <div id="detDate" style="font-weight: 600;"></div>
+        </div>
+        <div style="margin-bottom: 10px;">
+            <span style="color: var(--text-muted); font-size: 0.85rem;">Concepto</span>
+            <div id="detTitle" style="font-weight: 600;"></div>
+        </div>
+        <div style="margin-bottom: 10px;">
+            <span style="color: var(--text-muted); font-size: 0.85rem;">Monto</span>
+            <div id="detAmount" style="font-weight: 600; font-size: 1.2rem;"></div>
+        </div>
+    </div>
+</div>
+
+<script src="./js/theme.js"></script>
+<script src="./js/history.js"></script>
+
+</body>
+</html>

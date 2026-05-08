@@ -1,0 +1,76 @@
+/* Navegación */
+.navbar {
+    background-color: var(--card-bg);
+    border-bottom: 1px solid var(--border-color);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.nav-actions {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.nav-actions a, .nav-actions button {
+    color: var(--text-color);
+    font-weight: 500;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.nav-actions a:hover, .nav-actions button:hover {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+/* Contenedor Principal */
+.main-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+    flex-grow: 1;
+    width: 100%;
+}
+
+/* Grid Dashboard */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+@media (min-width: 768px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+/* Botones de acceso rápido */
+.quick-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.quick-actions .btn {
+    flex: 1;
+}
